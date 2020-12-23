@@ -49,35 +49,54 @@
                 <div class="resume-section-content">
                     
 
-
-
                     
                     <h2 class="mb-0">[Mathematical Statistics] 1. Probability and Distributions</h2>
-                    <div class="subheading mb-3">1.1 Introduction</div>
+                    <div class="subheading mb-3">1.2 Set Theory</div>
                     <p class="lead mb-5"></p>
                     <hr class="m-0" />
 
-                    <h3 class="mb-0">1.1 Introduction</h3>
+                    <h3 class="mb-0">1.2 Set Theory</h3>
+
+                    <p class="lead mb-5"><b>Definition 1.2.1.</b> If each element of set \(C_{1}\) is also an element of set \(C_{2}\), then \(C_{1}\) is called \( subset \) of \(C_{2}\), and denoted by \( C_{1} \subset C_{2} \).</p>
+
+                    <p class="lead mb-5"><b>Definition 1.2.2.</b> If a set \( C \) has no elements, \( C \) is called the \( null(empty) \) set, and denoted by \( C = \emptyset \).</p>
+
+                    <p class="lead mb-5"><b>Definition 1.2.3.</b> The set of all elements that belong to at least one of \( C_{1} \) and \( C_{2} \) is called the \( union \) of \( C_{1} \) and \( C_{2} \), and denoted by \( C_{1} \cup C_{2} \) and it can be generalized to any number of sets. For example, \( C_{1} \cup C_{2} \cup \cdots \cup C_{n} := \cup_{k=1}^{\infty} C_{k} \).</p>
+
+                    <p class="lead mb-5"><b>Example 1.2.1.</b> Let \( C_{k} = \left\{ x: \frac{1}{k+1} \le x \le 1\right\} \), then \( \bigcup_{k=1}^{\infty} C_{k}= \left\{ x: 0 < x \le 1 \right\} \).</p>
+
+                    <p class="lead mb-5"><b>Definition 1.2.4.</b> The set of all elements that belong to each of \( C_{1} \) and \( C_{2} \) is called the intersection of \( C_{1} \) and \( C_{2} \). and denoted by \( C_{1} \cap C_{2} \), and it can be generalized to any number of sets \( C_{1} \cap C_{2} \cap \cdots \cap C_{n} := \cap_{k=1}^{\infty} C_{k} \).</p>
+
+                    <p class="lead mb-5"><b>Example 1.2.2.</b> Let \( C_{k} = \left\{ x: 0 < x < \frac{1}{k} \right\} \), then \( \bigcap_{k=1}^{\infty} C_{k}= \emptyset \).</p>
+
+                    <p class="lead mb-5"><b>Definition 1.2.5.</b> Let \( C \) be a subset of \(\mathcal{C}\), then the set that consists of all elements of \(\mathcal{C}\) that are not element of \( C \) is called \(complement\) of \( C \), and denoted by \( C^\complement \) or \( \overline{C} \).</p>
 
                     <ul>
-                        <li class="lead mb-5">\(Statistical(random) experiment\): 
-                            <div>the outcome cannot be predicted with certainty prior to the performance of the experiment.</div>
-                        </li>
-                        <li class="lead mb-5">\(Sample space\):
-                            <div>collection of every possible outcome from the random experiment, and denoted by \( \mathcal{C} \).</div>
-                        </li>
-                        <li class="lead mb-5">\(Event\):
-                            <div>subset of sample, and denoted by \(A\), \(B\), \(C\).</div>
+                        <li class="lead mb-5">A function is called \(point\) or \(set function\) if its domein is point or set, respectively.</li>
+                    </ul>
+                    
+                    <p class="lead mb-5"><b>Example 1.2.3.</b>
+                        <br>point function: \( f(x) = 2x, f(1)=2 \).
+                        <br>set function: \( Q(A) = \) # of positive integers in \( A \), \( A = \left\{ x: -\infty < x < 6\right\} \Rightarrow Q(A) = 5\).
+                    </p>
+
+                    <ul>
+                        <li class="lead mb-5">The symbol
+                            <br>\( \int_{C}^{}f(x)dx \)
+                            <br>means the ordinary Riemann integral of \(f(x)\) over a one-dimensional set \(C\), the symbol
+                            <br>\(\int_{}^{}\int_{C}^{} g(x, y)dxdy\)
+                            <br>means the Riemann integral of \(g(x,y)\) over a two-dimensional set \(C\). Similarly, one or two-dimensional sum is
+                            <br>\(\sum_{C}^{} f(x), \sum_{}^{}\sum_{C}^{} g(x,y)\).
                         </li>
                     </ul>
 
-                    <p class="lead mb-5"><b>Example 1.1.1.</b> Consider tossing a coin, then \( \mathcal{C} = \left\{ H, T \right\} \).</p>
-                    <p class="lead mb-5"><b>Example 1.1.2.</b> Consider tossing two die (one red, the other white), then \( \mathcal{C} = \left\{ \left(1,1\right), \cdots , \left(1,6\right), \left(2,1\right), \cdots, \left(6,6\right) \right\} \).</p>
-                    <p class="lead mb-5"><b>Example 1.1.3.</b> Let \( C \) denote an event of sum seven when tossing two die, then \( \mathcal{C} = \left\{ \left(1,6\right), \left(2,5\right), \cdots, \left(6,1\right) \right\} \).</p>
+                    <p class="lead mb-5"><b>Example 1.2.4.</b> Let \(Q(C) = \int_{C}^{} \cdots \int_{}^{} dx_{1}dx_{2} \cdots dx_{n}\). If \(C=\left\{ \left( x_{1}, x_{2}, \cdots, x_{n} \right): 0 \le x_{1} \le x_{2} \le \cdots \le x_{n} \le 1 \right\}\), then
+                        <br>\(Q(C) = \int_{0}^{1} \int_{0}^{x^{n}} \cdots \int_{0}^{x^{3}} \int_{0}^{x^{2}} dx_{1} dx_{2} \cdots dx_{n-1} dx_{n} = \frac{1}{n!}\).
+                    </p>
 
-                    <p class="lead mb-5"><b>Remark 1.1.1.</b> Two types of probability: 
-                        <br>(i) Relative frequency approach,
-                        <br>(ii) Personal or subjective approach.</p>
+
+
+
 
 
                     <p class="lead mb-5"></p>
@@ -86,17 +105,8 @@
                     <h3 class="mb-0">Comments</h3>
 
 
-                    <p class="lead mb-5"><b>통계적 실험(임의 실험)(Statistical experiment or Random experiment)</b>이란 실험을 수행하기 전까지는 100%의 확신을 가지고 결과를 예측할 수 없는 실험으로 정의합니다. 우리가 통계적 실험의 결과를 예측할 수 없는 이유는 실험의 outcome이 변동(variation)을 가지기 때문입니다. 이와 반대의 개념으로는 결정적 실험(deterministic experiment)이 있습니다.</p>
+                    <p class="lead mb-5">용어 정리: 집합 이론(set theory), 여사건(complement)</p>
 
-                    <p class="lead mb-5"><b>표본 공간(Sample space)</b>이란 통계적 실험의 모든 outcome들의 모음으로 정의합니다. 여기서 \( \mathcal{C} \)는 collection을 의미합니다.</p>
-
-                    <p class="lead mb-5"><b>사건(Event)</b>이란 표본 공간의 subset을 의미합니다.</p>
-
-                    <p class="lead mb-5">두 가지 형태의 확률이 있습니다.</p>
-
-                    <p class="lead mb-5"><b>(i) 상대도수(객관적 확률)(Relative frequency or Objective probability)</b>: 주관을 배제하고 여러 번 시행을 하였을 때 몇 번 사건이 발생하였는지에 의하여 확률을 계산합니다. 예를 들어, Q.2020년 프로야구 정규시즌 기간에 NC다이노스의 승률은? A.0.601</p>
-
-                    <p class="lead mb-5"><b>(ii) 주관적 확률(Subjective probability)</b>: 객관성을 동원하기 어려운 상황일 때는 전문가 집단의 주관적인 판단에 의하여 확률을 계산합니다. 예를 들어, Q.롯데자이언츠가 올해 4강 안에 들어갈 확률은? A. (전문가의 주관적인 판단)</p>
 
 
 
