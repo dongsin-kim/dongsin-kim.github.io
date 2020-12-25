@@ -8,7 +8,7 @@
         <meta property="og:title" content="DK's Atelier">
         <meta property="og:description" content="Dongsin Kim's Atelier">
         <meta property="og:image" content="https://dskim.info/assets/img/motive_small.png">
-        <meta property="og:url" content="https://dskim.info/assets/post/qgss-pauli-matrices.html">
+        <meta property="og:url" content="https://dskim.info/assets/post/qgss-pauli-gates.html">
         
         <meta name="description" content="Dongsin Kim's Atelier" />
         <meta name="author" content="Dongsin Kim" />
@@ -59,22 +59,33 @@
 
 
                     
-                    <h2 class="mb-0">[QGSS] 6. Quantum Circuits - Pauli Matrices</h2>
-                    <div class="subheading mb-3">Qiskit Global Summer School (QGSS) - </div>
+                    <h2 class="mb-0">[QGSS] 6. Quantum Circuits - Pauli Gates</h2>
+                    <div class="subheading mb-3">Qiskit Global Summer School (QGSS) - Single qubit gates</div>
                     <p class="lead mb-5"></p>
                     <hr class="m-0" />
 
-                    <h3 class="mb-0">Quantum Circuits - Pauli Matrices</h3>
-                    <p class="lead mb-5">Pauli matrices</p>
+                    <h3 class="mb-0">Quantum Circuits - Pauli Gates</h3>
+                    <p class="lead mb-5">Pauli X-gate \(\sigma_{x}\) is a bit-flip gate. $$\begin{align} \sigma_{x} &=\left| 0 \right\rangle \left\langle 1 \right| + \left| 1 \right\rangle \left\langle 0 \right| \\ &= \left( \begin{array}{c} 1 \\ 0 \end{array}\right) \left( \begin{array}{cc} 0 & 1 \end{array}\right) + \left( \begin{array}{c} 0 \\ 1 \end{array}\right) \left( \begin{array}{cc} 1 & 0 \end{array}\right) \\ &= \left( \begin{array}{cc} 0 & 1 \\ 0 & 0 \end{array} \right) + \left( \begin{array}{cc} 0 & 0 \\ 1 & 0 \end{array} \right) \\ &= \left( \begin{array}{cc} 0 & 1 \\ 1 & 0 \end{array}\right) \end{align}$$</p>
+
+                    <p class="lead mb-5">$$\begin{align} \sigma_{x} \left| 0 \right\rangle &= \left( \begin{array}{cc} 0 & 1 \\ 1 & 0 \end{array}\right) \left( \begin{array}{c} 1 \\ 0 \end{array}\right) = \left( \begin{array}{c} 0 \\ 1 \end{array}\right) = \left| 1 \right\rangle \\ \sigma_{x} \left| 1 \right\rangle &= \left( \begin{array}{cc} 0 & 1 \\ 1 & 0 \end{array}\right) \left( \begin{array}{c} 0 \\ 1 \end{array}\right) = \left( \begin{array}{c} 1 \\ 0 \end{array}\right) = \left| 0 \right\rangle \end{align}$$</p>
+
+                    <p class="lead mb-5">Pauli Z-gate \(\sigma_{z}\) is a phase-flip gate. $$\begin{align} \sigma_{z} &=\left| 0 \right\rangle \left\langle 0 \right| - \left| 1 \right\rangle \left\langle 1 \right| \\ &= \left( \begin{array}{c} 1 \\ 0 \end{array}\right) \left( \begin{array}{cc} 1 & 0 \end{array}\right) - \left( \begin{array}{c} 0 \\ 1 \end{array}\right) \left( \begin{array}{cc} 0 & 1 \end{array}\right) \\ &= \left( \begin{array}{cc} 1 & 0 \\ 0 & 0 \end{array} \right) - \left( \begin{array}{cc} 0 & 0 \\ 0 & 1 \end{array} \right) \\ &= \left( \begin{array}{cc} 1 & 0 \\ 0 & -1 \end{array}\right) \end{align}$$</p>
+
+                    <p class="lead mb-5">$$\begin{align} \sigma_{z} \left| + \right\rangle &= \left( \begin{array}{cc} 1 & 0 \\ 0 & -1 \end{array}\right) \frac{1}{\sqrt{2}} \left( \begin{array}{c} 1 \\ 0 \end{array}\right) = \frac{1}{\sqrt{2}} \left( \begin{array}{c} 1 \\ -1 \end{array}\right) = \frac{1}{\sqrt{2}} \left( \left| 0 \right\rangle - \left| 1 \right\rangle \right) = \left| - \right\rangle \\ \sigma_{z} \left| - \right\rangle &= \left( \begin{array}{cc} 1 & 0 \\ 0 & -1 \end{array}\right) \frac{1}{\sqrt{2}} \left( \begin{array}{c} 1 \\ -1 \end{array}\right) = \frac{1}{\sqrt{2}} \left( \begin{array}{c} 1 \\ 1 \end{array}\right) = \frac{1}{\sqrt{2}} \left( \left| 0 \right\rangle + \left| 1 \right\rangle \right) = \left| + \right\rangle \end{align}$$</p>
+
+                    <p class="lead mb-5">Pauli Y-gate \(\sigma_{y}\) is a bit-flip and phase-flip gate. $$\begin{align} \sigma_{y} &= i \sigma_{x} \sigma_{z} \\ &= i \left( \begin{array}{cc} 0 & 1 \\ 1 & 0 \end{array}\right) \left( \begin{array}{cc} 1 & 0 \\ 0 & -1 \end{array}\right) \\ &= \left( \begin{array}{cc} 0 & -i \\ i & 0 \end{array}\right) \end{align}$$</p>
+
+                    <p class="lead mb-5">\( \sigma_{x} \), \( \sigma_{y} \), and \( \sigma_{z} \) are also called Pauli matrices and the square of a Pauli matrix is an identity matrix (Involutory). $$ I^{2} = \sigma_{x}^{2} = \sigma_{y}^{2} = \sigma_{z}^{2} = I $$</p>
+
+                    <p class="lead mb-5">\( \sigma_{x} \), \( \sigma_{y} \), \( \sigma_{z} \), and \(I\) form a basis of \(2 \times 2\) matrices. So, any \(1\)-qubit rotation can be written as a linear combination of these matrices.</p>
 
 
-                    
                     <p class="lead mb-5"></p>
                     <hr class="m-0" />
                     <h3 class="mb-0">Reference</h3>
                     <p class="lead mb-5"><a href="http://qiskit.org/learn/intro-qc-qh" target="_blank">IBM Quantum team, Introduction to Quantum Computing and Quantum Hardware (2020).</a></p>
-                    <!-- <p class="lead mb-5"><a href="https://en.wikipedia.org/wiki/Quantum_circuit" target="_blank">Quantum circuit - Wikipedia</a></p> -->
-
+                    <p class="lead mb-5"><a href="https://en.wikipedia.org/wiki/Quantum_logic_gate" target="_blank">Quantum logic gate - Wikipedia</a></p>
+                    <p class="lead mb-5"><a href="https://en.wikipedia.org/wiki/Pauli_matrices" target="_blank">Pauli matrices - Wikipedia</a></p>
                     
 
                     
