@@ -8,7 +8,7 @@
         <meta property="og:title" content="DK's Atelier">
         <meta property="og:description" content="Dongsin Kim's Atelier">
         <meta property="og:image" content="https://dskim.info/assets/img/motive_small.png">
-        <meta property="og:url" content="https://dskim.info/assets/post/qgss-pauli-gates.html">
+        <meta property="og:url" content="https://dskim.info/assets/post/qgss-hadamard-gate.html">
         
         <meta name="description" content="Dongsin Kim's Atelier" />
         <meta name="author" content="Dongsin Kim" />
@@ -59,36 +59,33 @@
 
 
                     
-                    <h2 class="mb-0">[QGSS] 6. Quantum Circuits - Pauli Gates</h2>
+                    <h2 class="mb-0">[QGSS] 7. Quantum Circuits - Hadamard Gate</h2>
                     <div class="subheading mb-3">Qiskit Global Summer School (QGSS) - Single qubit gates</div>
                     <p class="lead mb-5"></p>
                     <hr class="m-0" />
 
-                    <h3 class="mb-0">Quantum Circuits - Pauli Gates</h3>
-                    <p class="lead mb-5">Pauli X-gate \(\sigma_{x}\) is a bit-flip gate. $$\begin{align} \sigma_{x} &=\left| 0 \right\rangle \left\langle 1 \right| + \left| 1 \right\rangle \left\langle 0 \right| \\ &= \left( \begin{array}{c} 1 \\ 0 \end{array}\right) \left( \begin{array}{cc} 0 & 1 \end{array}\right) + \left( \begin{array}{c} 0 \\ 1 \end{array}\right) \left( \begin{array}{cc} 1 & 0 \end{array}\right) \\ &= \left( \begin{array}{cc} 0 & 1 \\ 0 & 0 \end{array} \right) + \left( \begin{array}{cc} 0 & 0 \\ 1 & 0 \end{array} \right) \\ &= \left( \begin{array}{cc} 0 & 1 \\ 1 & 0 \end{array}\right) \end{align}$$</p>
+                    <h3 class="mb-0">Quantum Circuits - Hadamard Gate</h3>
+                    <p class="lead mb-5">Hadamard gate \(H\) is one of the most important gates for quantum circuits. $$\begin{align} H &=\frac{1}{\sqrt{2}}\left( \left| 0 \right\rangle \left\langle 0 \right| + \left| 0 \right\rangle \left\langle 1 \right| + \left| 1 \right\rangle \left\langle 0 \right| - \left| 1 \right\rangle \left\langle 1 \right| \right) \\ &= \left( \begin{array}{cc} 1 & 0 \\ 0 & 0 \end{array}\right) + \left( \begin{array}{cc} 0 & 1 \\ 0 & 0 \end{array}\right) + \left( \begin{array}{cc} 0 & 0 \\ 1 & 0 \end{array}\right) + \left( \begin{array}{cc} 0 & 0 \\ 0 & -1 \end{array}\right) \\ &= \frac{1}{\sqrt{2}} \left( \begin{array}{cc} 1 & 1 \\ 1 & -1 \end{array}\right) \end{align}$$</p>
 
-                    <p class="lead mb-5">$$\begin{align} \sigma_{x} \left| 0 \right\rangle &= \left( \begin{array}{cc} 0 & 1 \\ 1 & 0 \end{array}\right) \left( \begin{array}{c} 1 \\ 0 \end{array}\right) = \left( \begin{array}{c} 0 \\ 1 \end{array}\right) = \left| 1 \right\rangle \\ \sigma_{x} \left| 1 \right\rangle &= \left( \begin{array}{cc} 0 & 1 \\ 1 & 0 \end{array}\right) \left( \begin{array}{c} 0 \\ 1 \end{array}\right) = \left( \begin{array}{c} 1 \\ 0 \end{array}\right) = \left| 0 \right\rangle \end{align}$$</p>
+                    <p class="lead mb-5">Because it creates a superposition and is applied to change from \(z\) to \(x\)-basis. $$\begin{align} H \left| 0 \right\rangle &= \frac{1}{\sqrt{2}} \left( \begin{array}{cc} 1 & 1 \\ 1 & -1 \end{array}\right) \left( \begin{array}{c} 1 \\ 0 \end{array}\right) = \frac{1}{\sqrt{2}} \left( \begin{array}{c} 1 \\ 1 \end{array}\right) = \frac{1}{\sqrt{2}} \left( \left| 0 \right\rangle + \left| 1 \right\rangle \right) = \left| + \right\rangle \\ H \left| 1 \right\rangle &= \frac{1}{\sqrt{2}} \left( \begin{array}{cc} 1 & 1 \\ 1 & -1 \end{array}\right) \left( \begin{array}{c} 0 \\ 1 \end{array}\right) = \frac{1}{\sqrt{2}} \left( \begin{array}{c} 1 \\ -1 \end{array}\right) = \frac{1}{\sqrt{2}} \left( \left| 0 \right\rangle - \left| 1 \right\rangle \right) = \left| - \right\rangle \end{align}$$</p>
 
-                    <p class="lead mb-5">Pauli Z-gate \(\sigma_{z}\) is a phase-flip gate. $$\begin{align} \sigma_{z} &=\left| 0 \right\rangle \left\langle 0 \right| - \left| 1 \right\rangle \left\langle 1 \right| \\ &= \left( \begin{array}{c} 1 \\ 0 \end{array}\right) \left( \begin{array}{cc} 1 & 0 \end{array}\right) - \left( \begin{array}{c} 0 \\ 1 \end{array}\right) \left( \begin{array}{cc} 0 & 1 \end{array}\right) \\ &= \left( \begin{array}{cc} 1 & 0 \\ 0 & 0 \end{array} \right) - \left( \begin{array}{cc} 0 & 0 \\ 0 & 1 \end{array} \right) \\ &= \left( \begin{array}{cc} 1 & 0 \\ 0 & -1 \end{array}\right) \end{align}$$</p>
-
-                    <p class="lead mb-5">$$\begin{align} \sigma_{z} \left| + \right\rangle &= \left( \begin{array}{cc} 1 & 0 \\ 0 & -1 \end{array}\right) \frac{1}{\sqrt{2}} \left( \begin{array}{c} 1 \\ 0 \end{array}\right) = \frac{1}{\sqrt{2}} \left( \begin{array}{c} 1 \\ -1 \end{array}\right) = \frac{1}{\sqrt{2}} \left( \left| 0 \right\rangle - \left| 1 \right\rangle \right) = \left| - \right\rangle \\ \sigma_{z} \left| - \right\rangle &= \left( \begin{array}{cc} 1 & 0 \\ 0 & -1 \end{array}\right) \frac{1}{\sqrt{2}} \left( \begin{array}{c} 1 \\ -1 \end{array}\right) = \frac{1}{\sqrt{2}} \left( \begin{array}{c} 1 \\ 1 \end{array}\right) = \frac{1}{\sqrt{2}} \left( \left| 0 \right\rangle + \left| 1 \right\rangle \right) = \left| + \right\rangle \end{align}$$</p>
-
-                    <p class="lead mb-5">Pauli Y-gate \(\sigma_{y}\) is a bit-flip and phase-flip gate. $$\begin{align} \sigma_{y} &= i \sigma_{x} \sigma_{z} \\ &= i \left( \begin{array}{cc} 0 & 1 \\ 1 & 0 \end{array}\right) \left( \begin{array}{cc} 1 & 0 \\ 0 & -1 \end{array}\right) \\ &= \left( \begin{array}{cc} 0 & -i \\ i & 0 \end{array}\right) \end{align}$$</p>
-
-                    <p class="lead mb-5">\( \sigma_{x} \), \( \sigma_{y} \), and \( \sigma_{z} \) are also called Pauli matrices and a square of a Pauli matrix is an identity matrix (Involutory). $$ I^{2} = \sigma_{x}^{2} = \sigma_{y}^{2} = \sigma_{z}^{2} = I $$</p>
-
-                    <p class="lead mb-5">\( \sigma_{x} \), \( \sigma_{y} \), \( \sigma_{z} \), and \(I\) form a basis of \(2 \times 2\) matrices. So, any \(1\)-qubit rotation can be written as a linear combination of these matrices.</p>
+                    <p class="lead mb-5">In this case, it used to change from \(x\) to \(z\)-basis. $$\begin{align} H \left| + \right\rangle &= \frac{1}{\sqrt{2}} \left( \begin{array}{cc} 1 & 1 \\ 1 & -1 \end{array}\right) \frac{1}{\sqrt{2}} \left( \begin{array}{c} 1 \\ 1 \end{array}\right) = \left( \begin{array}{c} 1 \\ 0 \end{array}\right) = \left| 0 \right\rangle \\ H \left| - \right\rangle &= \frac{1}{\sqrt{2}} \left( \begin{array}{cc} 1 & 1 \\ 1 & -1 \end{array}\right) \frac{1}{\sqrt{2}} \left( \begin{array}{c} 1 \\ -1 \end{array}\right) = \left( \begin{array}{c} 0 \\ 1 \end{array}\right) = \left| 1 \right\rangle \end{align}$$</p>
 
                     <figure>
                         <img src="../../assets/inkscape/qgss-bloch-sphere-2.svg" alt="bloch-sphere basics2" style="width:50%"/>
                         <figcaption>Fig.1 - Bloch Sphere concept.</figcaption>
                     </figure>
 
-                    <p class="lead mb-3">Please note that on the Bloch Sphere (Figure 1):</p>
+                    <p class="lead mb-5">Similary, as the Phase gate \( S = \left( \begin{array}{cc} 1 & 0 \\ 0 & i \end{array} \right) \) makes a rotation \(\left(\varphi\right)\) around \(z\)-axis by \(\frac{\pi}{2}\), \(S \cdot H\) is applied to change from \(z\) to \(y\)-basis. $$\begin{align} S \cdot H \left| 0 \right\rangle &= S \left| + \right\rangle = \left( \begin{array}{cc} 1 & 0 \\ 0 & i \end{array}\right) \frac{1}{\sqrt{2}} \left( \begin{array}{c} 1 \\ 1 \end{array}\right) = \frac{1}{\sqrt{2}} \left( \begin{array}{c} 1 \\ i \end{array}\right) = \frac{1}{\sqrt{2}} \left( \left| 0 \right\rangle + i \left| 1 \right\rangle \right) = \left| +i \right\rangle \\ S \cdot H \left| 1 \right\rangle &= S \left| - \right\rangle = \left( \begin{array}{cc} 1 & 0 \\ 0 & i \end{array}\right) \frac{1}{\sqrt{2}} \left( \begin{array}{c} 1 \\ -1 \end{array}\right) = \frac{1}{\sqrt{2}} \left( \begin{array}{c} 1 \\ -i \end{array}\right) = \frac{1}{\sqrt{2}} \left( \left| 0 \right\rangle - i \left| 1 \right\rangle \right) = \left| -i \right\rangle\end{align}$$</p>
+
+
+
+                    <p class="lead mb-3">Please note that:</p>
                     
                     <ul>
-                        <li class="lead mb-3">Pauli X-gate \(\sigma_{x}\) makes a rotation \(\left(\theta\right)\) around \(x\)-axis by \(\pi\), </li>
-                        <li class="lead mb-3">Pauli Z-gate \(\sigma_{z}\) makes a rotation \(\left(\varphi\right)\) around \(z\)-axis by \(\pi\).</li>
+                        <li class="lead mb-3">\( \left\{ \left| 0 \right\rangle , \left| 1 \right\rangle \right\} \): \(z\)-basis,</li>
+                        <li class="lead mb-3">\( \left\{ \left| + \right\rangle, \left| - \right\rangle\right\} \): \(x\)-basis,</li>
+                        <li class="lead mb-3">\( \left\{ \left| +i \right\rangle, \left| -i \right\rangle\right\} \): \(y\)-basis.</li>
                     </ul>
 
 
