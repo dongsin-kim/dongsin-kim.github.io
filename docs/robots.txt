@@ -1,4 +1,4 @@
 User-agent: *
 Allow: /
 
-Sitemap: https://dskim.info/sitemap.xml
+Sitemap: https://dongsin-kim.github.io/sitemap.xml
