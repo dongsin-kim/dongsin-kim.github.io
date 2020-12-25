@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
+        <meta name="description" content="" />
+        <meta name="author" content="" />
+        <title>DK's Atelier</title>
+        <link rel="icon" type="image/x-icon" href="../../assets/img/favicon.ico" />
+        <!-- Font Awesome icons (free version)-->
+        <script src="https://use.fontawesome.com/releases/v5.15.1/js/all.js" crossorigin="anonymous"></script>
+        <!-- Google fonts-->
+        <link href="https://fonts.googleapis.com/css?family=Saira+Extra+Condensed:500,700" rel="stylesheet" type="text/css" />
+        <link href="https://fonts.googleapis.com/css?family=Muli:400,400i,800,800i" rel="stylesheet" type="text/css" />
+        <!-- Core theme CSS (includes Bootstrap)-->
+        <link href="../../css/styles.css" rel="stylesheet" />
+        <!-- MathJax-->
+        <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+        <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+    </head>
+    <!-- Global site tag (gtag.js) - Google Analytics -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-NB1S4MBME8"></script>
+    <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+
+    gtag('config', 'G-NB1S4MBME8');
+    </script>
+    <body id="page-top">
+        <!-- Navigation-->
+        <nav class="navbar navbar-expand-lg navbar-dark bg-primary fixed-top" id="sideNav">
+            <a class="navbar-brand js-scroll-trigger" href="../../#page-top">
+                <span class="d-block d-lg-none">DK's Atelier</span>
+                <span class="d-none d-lg-block"><img class="img-fluid img-profile rounded-circle mx-auto mb-2" src="../../assets/img/profile.jpg" alt="" /></span>
+            </a>
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation"><span class="navbar-toggler-icon"></span></button>
+            <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                <ul class="navbar-nav">
+                    <li class="nav-item"><a class="nav-link js-scroll-trigger" href="../../#about">About</a></li>
+                    <li class="nav-item"><a class="nav-link js-scroll-trigger" href="../../#etude">Etude</a></li>
+                </ul>
+            </div>
+        </nav>
+        <!-- Page Content-->
+        <div class="container-fluid p-0">
+            <!-- English-->
+            <section class="resume-section" id="English">
+                <div class="resume-section-content">
+                    
+
+
+
+                    
+                    <h2 class="mb-0">[QGSS] 4. Bloch Sphere</h2>
+                    <div class="subheading mb-3">Qiskit Global Summer School (QGSS) - A geometrical representation of the normalized and pure quantum state</div>
+                    <p class="lead mb-5"></p>
+                    <hr class="m-0" />
+
+                    <h3 class="mb-0">Bloch Sphere</h3>
+                    <p class="lead mb-5">Let's consider a normalized and pure quantum state as $$ \left| \psi \right\rangle = \alpha \left| 0 \right\rangle + \beta \left| 1 \right\rangle $$ where $$\begin{align} \alpha, \beta &\in \mathbb{C}, \\
+                        \left| \alpha \right|^{2} + \left| \beta \right|^{2} &= 1. \end{align}$$</p>
+
+                    <p class="lead mb-5">Since the complex numbers (\(\alpha\) and \(\beta\)) have a real part and an imaginary part, we would need \(4\)-dimensions to represent them all together. To solve this issue, we write the quantum state as $$\begin{aligned} \left| \psi \right\rangle &= \left\{  r_{\alpha} e^{i \varphi_{\alpha}} \left| 0 \right\rangle + r_{\beta} e^{i \varphi_{\beta}} \left| 1 \right\rangle \right\} \times e^{-i \varphi_{\alpha}} \\ &\equiv r_{\alpha} \left| 0 \right\rangle + r_{\beta} e^{i \left( \varphi_{\beta} - \varphi_{\alpha} \right)} \left| 1 \right\rangle \end{aligned}$$ where $$\begin{align} r_{\alpha}, r_{\beta} &\in \left[0, 1\right], \\ r_{\alpha}^{2} + r_{\beta}^{2} &= 1. \end{align}$$</p>
+
+
+                    <figure>
+                        <img src="../../assets/inkscape/qgss-bloch-sphere-1.svg" alt="bloch-sphere basics" style="width:40%"/>
+                        <figcaption>Fig.1 - A relationship between \(r_{\alpha}\), \(r_{\beta}\), and \(\theta\).</figcaption>
+                    </figure>
+
+
+                    <p class="lead mb-5">We introduce \(\theta\) using the relationship (Figure 1): $$\begin{align} r_{\alpha} &= \cos \left( \theta / 2 \right), \\ r_{\beta} &= \sin \left( \theta / 2 \right), \\ \theta &\in \left[0, \pi \right]. \end{align}$$</p>
+
+                    <p class="lead mb-5">Finally, we can write the quantum state as $$ \left| \psi \right\rangle = \cos \left( \frac{\theta}{2}\right) \left| 0 \right\rangle + e^{i\varphi} \sin \left( \frac{\theta}{2} \right) \left| 1 \right\rangle $$ where $$\begin{align} \varphi_{\beta} - \varphi_{\alpha} &:= \varphi, \\ \varphi &\in \left[ 0, 2\pi\right). \end{align}$$</p>
+
+                    <p class="lead mb-5">\(\varphi\) describes the relative phase and \(\theta\) determines the probability to measure \(\left| 0 \right\rangle\) and \(\left| 1 \right\rangle\): $$\begin{align} P\left( 0\right) &=\left| \left\langle 0 | \psi \right\rangle \right|^{2} = \cos^{2} \left( \theta / 2 \right),\\ P\left( 1\right) &=\left| \left\langle 1 | \psi \right\rangle \right|^{2} = \sin^{2} \left( \theta / 2 \right). \end{align}$$</p>
+
+                    <p class="lead mb-5">Therefore, all the normalized and pure quantum states can be illustrated on the surface of a sphere with radius \(\left| \vec{r} \right| = 1\), which we call the Bloch sphere (Figure 2) and the coordinates of such a quantum state are given by the Bloch vector: $$ \vec{r} = \left( \begin{array}{c} \sin\theta \cos\varphi \\ \sin\theta \sin\varphi \\ \cos\theta \end{array}\right) $$</p>
+
+                    <figure>
+                        <img src="../../assets/inkscape/qgss-bloch-sphere-2.svg" alt="bloch-sphere basics2" style="width:50%"/>
+                        <figcaption>Fig.2 - Bloch Sphere concept.</figcaption>
+                    </figure>
+
+                    <p class="lead mb-3">For examples,</p>
+                    <ul>
+                        <li class="lead mb-3">\( \left| 0 \right\rangle \): \(\theta = 0, \varphi = arbitrary, \vec{r} = \left( \begin{array}{ccc} 0 & 0 & 1 \end{array}\right)^{\top} \),</li>
+                        <li class="lead mb-3">\( \left| 1 \right\rangle \): \(\theta = \pi, \varphi = arbitrary, \vec{r} = \left( \begin{array}{ccc} 0 & 0 & -1 \end{array}\right)^{\top} \),</li>
+                        <li class="lead mb-3">\( \left| + \right\rangle \): \(\theta = \left(\pi / 2\right), \varphi = 0, \vec{r} = \left( \begin{array}{ccc} 1 & 0 & 0 \end{array}\right)^{\top} \),</li>
+                        <li class="lead mb-3">\( \left| - \right\rangle \): \(\theta = \left(\pi / 2\right), \varphi = \pi, \vec{r} = \left( \begin{array}{ccc} -1 & 0 & 0 \end{array}\right)^{\top} \),</li>
+                        <li class="lead mb-3">\( \left| +i \right\rangle \): \(\theta = \left(\pi / 2\right), \varphi = \left(\pi / 2\right), \vec{r} = \left( \begin{array}{ccc} 0 & 1 & 0 \end{array}\right)^{\top} \),</li>
+                        <li class="lead mb-3">\( \left| -i \right\rangle \): \(\theta = \left(\pi / 2\right), \varphi = \left(3\pi / 2\right), \vec{r} = \left( \begin{array}{ccc} 0 & 0 & 1 \end{array}\right)^{\top} \).</li>
+                    </ul>
+
+
+
+                    
+                    <p class="lead mb-5"></p>
+                    <hr class="m-0" />
+                    <h3 class="mb-0">Reference</h3>
+                    <p class="lead mb-5"><a href="http://qiskit.org/learn/intro-qc-qh" target="_blank">IBM Quantum team, Introduction to Quantum Computing and Quantum Hardware (2020).</a></p>
+                    <p class="lead mb-5"><a href="https://youtu.be/a-dIl1Y1aTs" target="_blank">The Bloch Sphere (simply explained)</a></p>
+
+                    
+
+                    
+                </div>
+            </section>
+        </div>       
+        <!-- Bootstrap core JS-->
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/js/bootstrap.bundle.min.js"></script>
+        <!-- Third party plugin JS-->
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-easing/1.4.1/jquery.easing.min.js"></script>
+        <!-- Core theme JS-->
+        <script src="../../js/scripts.js"></script>
+    </body>
+</html>
